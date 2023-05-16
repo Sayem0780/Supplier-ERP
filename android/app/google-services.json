@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "438431347029",
+    "firebase_url": "https://ustad-f34a1-default-rtdb.firebaseio.com",
+    "project_id": "ustad-f34a1",
+    "storage_bucket": "ustad-f34a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438431347029:android:04f50dcf90bf366c52bfdc",
+        "android_client_info": {
+          "package_name": "com.example.ustad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438431347029-na8hqoe16v2cq98iifhafskm9j11ri52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLTh32i0YXtoi_JE1EbTqYJ6oDotL_0C8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438431347029-na8hqoe16v2cq98iifhafskm9j11ri52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438431347029:android:89074798f9068f6552bfdc",
+        "android_client_info": {
+          "package_name": "com.supplier_erp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438431347029-na8hqoe16v2cq98iifhafskm9j11ri52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLTh32i0YXtoi_JE1EbTqYJ6oDotL_0C8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438431347029-na8hqoe16v2cq98iifhafskm9j11ri52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
