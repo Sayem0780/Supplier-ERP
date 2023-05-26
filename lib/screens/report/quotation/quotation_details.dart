@@ -253,7 +253,7 @@ class _QuotationDetailsState extends State<QuotationDetails> {
                               pw.Container(
                                 alignment: pw.Alignment.center,
                                 child: pw.Text(
-                                  'Real It Solution',
+                                  'Rack Up It Solution',
                                   style: pw.TextStyle(
                                     fontSize: 20,
                                     fontWeight: pw.FontWeight.bold,
@@ -367,7 +367,7 @@ class _QuotationDetailsState extends State<QuotationDetails> {
                               pw.Container(
                                 alignment: pw.Alignment.center,
                                 child: pw.Text(
-                                  'Real IT Solution',
+                                  'Rack Up IT Solution',
                                   style: pw.TextStyle(
                                     fontSize: 20,
                                     fontWeight: pw.FontWeight.bold,
@@ -453,7 +453,6 @@ class _QuotationDetailsState extends State<QuotationDetails> {
                               pw.SizedBox(height: 30),
                               pw.Text('Conditions',style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                               pw.SizedBox(height: 10),
-                              pw.Text('1.jrghufhgkebvjkdbvusbvkdsbvksdbvksdbvksdbvksdbvksd\n2.bvksdbvkudsbvksbvkhdbvksbvk\n3.sbvksbvkjsbvksbvksbvsbvksbvksvbks\n4.jbvksdbvksbvkjsbvksdbvksjbvkdbvkdbvkjdbvksbvksbvkjdbvksdbvjsdbvksbvkdfbvkdbvkjdbvkdbvkjdbvkjbvkjbvkjbvkjdbvkd\n5.fbvksbvkjdsbvkjsdbvksdbvkjsb vkdsbvksdvb\n'),
                               pw.Text(condition.toString()),
                               pw.SizedBox(height: 30),
                               pw.Row(
@@ -535,7 +534,6 @@ class _QuotationDetailsState extends State<QuotationDetails> {
                                 pw.SizedBox(height: 30),
                                 pw.Text('Conditions',style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                                 pw.SizedBox(height: 10),
-                                pw.Text('1.jrghufhgkebvjkdbvusbvkdsbvksdbvksdbvksdbvksdbvksd\n2.bvksdbvkudsbvksbvkhdbvksbvk\n3.sbvksbvkjsbvksbvksbvsbvksbvksvbks\n4.jbvksdbvksbvkjsbvksdbvksjbvkdbvkdbvkjdbvksbvksbvkjdbvksdbvjsdbvksbvkdfbvkdbvkjdbvkdbvkjdbvkjbvkjbvkjbvkjdbvkd\n5.fbvksbvkjdsbvkjsdbvksdbvkjsb vkdsbvksdvb\n'),
                                 pw.Text(condition.toString()),
                                 pw.SizedBox(height: 30),
                                 pw.Row(
