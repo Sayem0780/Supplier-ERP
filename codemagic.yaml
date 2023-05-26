@@ -1,29 +1,77 @@
 workflows:
-  flutter_ios_workflow:
-    name: Flutter iOS Build and Test
-    triggers:
-      - event: push
-        branch: main # Replace with your desired branch name
-    environment:
-      flutter: latest
+  flutter-ios:
+    # This workflow builds and deploys a Flutter iOS app to the App Store Connect.
 
-    # Define workflow steps
-    scripts:
-      - name: Install dependencies
-        script: flutter pub get
+    # The app name is the name of the Flutter project.
+    app_name: "My App"
 
-      - name: Run tests
-        script: flutter test
+    # The app bundle identifier is the unique identifier for your app.
+    app_bundle_identifier: "com.example.myapp"
 
-      - name: Build iOS app
-        script: flutter build ios
+    # The Apple Developer Team ID is your Apple Developer account ID.
+    apple_developer_team_id: "1234567890"
 
-      - name: Archive and export .ipa
-        script: |
-          mkdir -p $HOME/export
-          cd ios
-          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -archivePath "$HOME/export/Runner.xcarchive" archive -quiet
-          xcodebuild -exportArchive -archivePath "$HOME/export/Runner.xcarchive" -exportOptionsPlist ExportOptions.plist -exportPath "$HOME/export" -quiet
+    # The App Store Connect API key is your App Store Connect API key.
+    app_store_connect_api_key: "KEY_HERE"
 
+    # The App Store Connect secret is your App Store Connect secret.
+    app_store_connect_secret: "SECRET_HERE"
+
+    # The signing certificate is the certificate used to sign your app.
+    signing_certificate: "Apple Development"
+
+    # The provisioning profile is the provisioning profile used to build your app.
+     provisioning_profile: "My App AppStore"
+
+    # The build configuration is the build configuration used to build your app.
+    build_configuration: "Release"
+
+    # The target platform is the target platform for your app.
+    target_platform: "ios"
+
+    # The steps are the steps that are executed during the workflow.
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: flutter/flutter-action@v1
+        with:
+          flutter_version: "2.10.3"
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ runner.workspace }}/.pub-cache
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
+
+      - run: flutter pub get
+
+      - run: flutter build ios --release
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: app
+          path: build/ios/Release-iphoneos/Runner.ipa
+
+      - uses: apple/app-store-connect-api@v1
+        with:
+          api_key: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
+          secret: ${{ secrets.APP_STORE_CONNECT_SECRET }}
+
+          # The app identifier is the unique identifier for your app.
+          app_identifier: ${{ env.APP_BUNDLE_IDENTIFIER }}
+
+          # The distribution method is the method used to distribute your app.
+          distribution_method: appstore
+
+          # The build number is the build number of your app.
+          build_number: ${{ steps.flutter_build.outputs.build_number }}
+
+          # The app version is the app version of your app.
+          app_version: ${{ steps.flutter_build.outputs.app_version }}
+
+          # The file is the path to the IPA file.
+          file: app/Runner.ipa
+
+    # The artifacts are the artifacts that are uploaded to the artifact repository.
     artifacts:
-      - $HOME/export/*.ipa
+      - path: app/Runner.ipa
+        name: app
