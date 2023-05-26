@@ -12,18 +12,9 @@ workflows:
 
       - name: Build iOS app
         script: flutter build ios
-
-      - name: Archive and export .ipa
-        script: |
-          mkdir -p $HOME/export
-          cd ios
-          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -archivePath "$HOME/export/Runner.xcarchive" archive -quiet
-          xcodebuild -exportArchive -archivePath "$HOME/export/Runner.xcarchive" -exportOptionsPlist ExportOptions.plist -exportPath "$HOME/export" -quiet
-
+        
     artifacts:
       - $HOME/export/*.ipa
-Please note that without the triggers section, this configuration will not automatically trigger a build on every push. However, you can manually trigger a build in Codemagic using the UI or API whenever you need to build and test your Flutter iOS app.
-
 
 
 
