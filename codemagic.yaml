@@ -1,5 +1,24 @@
 workflows:
-    sample-workflow:
-        name: Codemagic Sample Workflow
-        max_build_duration: 120
-        instance_type: mac_mini_m1
+  flutter_ios_workflow:
+    name: Flutter iOS Build and Test
+    environment:
+      flutter: latest
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+
+      - name: Run tests
+        script: flutter test
+
+      - name: Build iOS app
+        script: flutter build ios
+
+      - name: Archive and export .ipa
+        script: |
+          mkdir -p $HOME/export
+          cd ios
+          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -archivePath "$HOME/export/Runner.xcarchive" archive -quiet
+          xcodebuild -exportArchive -archivePath "$HOME/export/Runner.xcarchive" -exportOptionsPlist ExportOptions.plist -exportPath "$HOME/export" -quiet
+
+    artifacts:
+      - $HOME/export/*.ipa
