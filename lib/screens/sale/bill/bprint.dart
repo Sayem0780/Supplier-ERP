@@ -131,7 +131,7 @@ class BPrint extends StatelessWidget {
                               pw.Container(
                                 alignment: pw.Alignment.center,
                                 child: pw.Text(
-                                  'Real It Solution',
+                                  'Rack Up It Solution',
                                   style: pw.TextStyle(
                                     fontSize: 20,
                                     fontWeight: pw.FontWeight.bold,
@@ -241,7 +241,7 @@ class BPrint extends StatelessWidget {
                               pw.Container(
                                 alignment: pw.Alignment.center,
                                 child: pw.Text(
-                                  'Real IT Solution',
+                                  'Rack Up IT Solution',
                                   style: pw.TextStyle(
                                     fontSize: 20,
                                     fontWeight: pw.FontWeight.bold,
