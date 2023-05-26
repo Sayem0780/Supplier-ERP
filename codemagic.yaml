@@ -1,6 +1,4 @@
 workflows:
-  version: 1
-
   flutter_ios_workflow:
     name: Flutter iOS Build and Test
     triggers:
